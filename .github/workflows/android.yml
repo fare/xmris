@@ -12,7 +12,8 @@ jobs:
           distribution: temurin
           java-version: '17'
       - name: Install Android build tools
-        run: sdkmanager "platforms;android-35" "build-tools;35.0.0" "ndk;28.2.13676358" "cmake;3.22.1"
+        run: |
+          "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" "platforms;android-35" "build-tools;35.0.0" "ndk;28.2.13676358" "cmake;3.22.1"
       - name: Build Android debug APK
         run: bash android/build.sh
       - name: Verify package signature and native libraries

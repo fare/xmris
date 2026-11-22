@@ -9,16 +9,21 @@ Mr. Do!, a 1982 game for 8-bit consoles by Kazutoshi Ueda:
   - [Demo video of gameplay](https://www.youtube.com/watch?v=hv2B-p1p8OQ)
   - [Original Z80 arcade ROMs for MAME](https://www.planetemu.net/en/rom/mame-roms-merged/mrdo)
 
-I (Faré Rideau) am amazed at how much patience Nathan had in precisely
-re-creating the behavior of the original game, and
-I wonder whether he reverse-engineered the code or
-just inferred the rules by observation: the game has plenty of fun
-corner cases that interact very well with each other,
+I (Faré Rideau) am amazed at how engaging is the gameplay of this simple game
+by Kazutoshi Ueda (it seems that the game rules, the way they interact, and
+the order in which they are enforced really favor happy surprises), and
+at how much patience Nathan Sidwell had in precisely re-creating the behavior
+of the original game, with improved graphics. I wonder whether Sidwell
+reverse-engineered the code or just inferred the rules by observation: the
+game has plenty of fun corner cases that interact very well with each other,
 many not obvious to the beginner (shooting through walls,
 dying and gaining a life at the same time, etc.),
 that Nathan perfectly reproduced.
 
-2026 revival and SDL port maintained by François-René (Faré) Rideau.
+2026 revival maintained by François-René (Faré) Rideau:
+port to SDL, support for Linux, Windows, Android,
+macOS, iOS (the latter two not tested yet),
+sound effects, and minor fixes to the game logic.
 
 ## Building and running Mr Is
 

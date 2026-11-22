@@ -222,7 +222,7 @@ SDL_Window *sdl_video_open(int scale, int fullscreen, SDL_RendererLogicalPresent
   display.back=surface(WINDOW_WIDTH,WINDOW_HEIGHT);
   frame=surface(WINDOW_WIDTH,WINDOW_HEIGHT);
   video_fill(display.copy,GC_CLEAR,0,0,WINDOW_WIDTH,WINDOW_HEIGHT);
-  window=SDL_CreateWindow("XMRiS",WINDOW_WIDTH*scale,WINDOW_HEIGHT*scale,
+  window=SDL_CreateWindow("Mr Is",WINDOW_WIDTH*scale,WINDOW_HEIGHT*scale,
       SDL_WINDOW_RESIZABLE | (fullscreen ? SDL_WINDOW_FULLSCREEN : 0));
   if (window) renderer=SDL_CreateRenderer(window,NULL);
   if (renderer) texture=SDL_CreateTexture(renderer,SDL_PIXELFORMAT_XRGB8888,

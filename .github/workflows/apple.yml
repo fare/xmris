@@ -22,13 +22,13 @@ jobs:
             flags+=(-DCMAKE_SYSTEM_NAME=iOS -DCMAKE_OSX_DEPLOYMENT_TARGET=15.0)
           fi
           cmake -S apple -B build/apple -G Xcode "-DCMAKE_OSX_SYSROOT=$sdk" "${flags[@]}" -DCMAKE_XCODE_ATTRIBUTE_CODE_SIGNING_ALLOWED=NO
-          cmake --build build/apple --config Release --target XMRiS --parallel 4
-          app=$(find build/apple -name XMRiS.app -type d -print -quit)
+          cmake --build build/apple --config Release --target xmris --parallel 4
+          app=$(find build/apple -name xmris.app -type d -print -quit)
           test -n "$app"
           echo "APP=$app" >> "$GITHUB_ENV"
       - name: Check macOS executable
         if: matrix.sdk == 'macosx'
-        run: '"$APP/Contents/MacOS/XMRiS" -help'
+        run: '"$APP/Contents/MacOS/xmris" -help'
       - name: Launch on an iPhone simulator
         if: matrix.sdk == 'iphonesimulator'
         run: |
@@ -38,8 +38,8 @@ jobs:
           xcrun simctl install "$id" "$APP"
           xcrun simctl launch "$id" org.xmris.game
       - name: Package
-        run: ditto -c -k --keepParent "$APP" XMRiS.zip
+        run: ditto -c -k --keepParent "$APP" xmris.zip
       - uses: actions/upload-artifact@v4
         with:
           name: xmris-${{ matrix.sdk }}
-          path: XMRiS.zip
+          path: xmris.zip

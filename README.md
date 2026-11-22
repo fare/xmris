@@ -1,6 +1,6 @@
-# XMRIS 4.1.2 in 2026
+# Mr Is 4.1.2 in 2026
 
-xmris (1992-1995) by Nathan Sidwell is a remarkably faithful Unix clone of
+Mr Is (`xmris`, 1992-1995) by Nathan Sidwell is a remarkably faithful Unix clone of
 Mr. Do!, a 1982 game for 8-bit consoles by Kazutoshi Ueda:
 
   - [Wikipedia page](https://en.wikipedia.org/wiki/Mr._Do!)
@@ -20,7 +20,7 @@ that Nathan perfectly reproduced.
 
 2026 revival and SDL port maintained by François-René (Faré) Rideau.
 
-## Building and running XMRIS
+## Building and running Mr Is
 
 Choose a frontend: SDL3 or classic X11.
 
@@ -129,18 +129,18 @@ compiler, then build the macOS app:
 ```sh
 make -f Makefile.sdl CC=clang bitmaps/sprites
 cmake -S apple -B build/mac -G Xcode
-cmake --build build/mac --config Release --target XMRiS
-open build/mac/Release/XMRiS.app
+cmake --build build/mac --config Release --target xmris
+open build/mac/Release/xmris.app
 ```
 
 For iOS, configure a separate build directory and open its Xcode project:
 
 ```sh
 cmake -S apple -B build/ios -G Xcode -DCMAKE_SYSTEM_NAME=iOS -DCMAKE_OSX_SYSROOT=iphonesimulator -DCMAKE_OSX_DEPLOYMENT_TARGET=15.0
-open build/ios/XMRiS.xcodeproj
+open build/ios/xmris.xcodeproj
 ```
 
-Select the XMRiS scheme and an iPhone simulator, then Run. For a physical
+Select the xmris scheme and an iPhone simulator, then Run. For a physical
 iPhone, configure another directory with `-DCMAKE_OSX_SYSROOT=iphoneos`
 and select your signing team in Xcode. iOS uses the same touch controls
 as Android. Both Apple targets support SDL controllers.
